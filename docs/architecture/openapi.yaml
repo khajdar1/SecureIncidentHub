@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Secure Incident Hub foundation API
+  version: 0.0.0
+  description: Phase 0 diagnostics only. No tenant data or login endpoints.
+paths:
+  /health/live:
+    get:
+      summary: Process liveness
+      security: []
+      responses:
+        '200':
+          description: Host responds
+          content:
+            text/plain:
+              schema: { type: string, const: Healthy }
+  /health/ready:
+    get:
+      summary: Host startup/shutdown readiness only
+      security: []
+      responses:
+        '200':
+          description: Host started and not stopping; external dependencies are not checked
+          content:
+            text/plain:
+              schema: { type: string, const: Healthy }
+        '503':
+          description: Host not ready
+          content:
+            text/plain:
+              schema: { type: string, const: Unhealthy }
+  /examples/problem:
+    get:
+      summary: Fixed safe error format example
+      security: []
+      responses:
+        '400':
+          description: Deliberate example validation error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ProblemDetails:
+      type: object
+      required: [type, title, status, traceId]
+      properties:
+        type: { type: string }
+        title: { type: string }
+        status: { type: integer }
+        detail: { type: string }
+        traceId: { type: string }
