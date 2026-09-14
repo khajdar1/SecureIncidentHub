@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup>
+        <ProjectReference Include="../SecureIncidentHub.Domain/SecureIncidentHub.Domain.csproj" />
+    </ItemGroup>
+</Project>

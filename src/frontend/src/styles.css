@@ -1,0 +1,10 @@
+html {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #152238;
+  background: #f7f9fc;
+}
+body {
+  margin: 0;
+}

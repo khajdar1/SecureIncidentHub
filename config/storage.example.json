@@ -1,0 +1,11 @@
+{
+  "ObjectStorage": {
+    "Enabled": false,
+    "Container": "REPLACE_WITH_PRIVATE_CONTAINER_NAME",
+    "ServiceEndpoint": null,
+    "MaximumUploadBytes": 26214400,
+    "UploadGrantLifetimeSeconds": 300,
+    "DownloadGrantLifetimeSeconds": 60,
+    "AllowedContentTypes": ["application/pdf", "image/png", "text/plain"]
+  }
+}

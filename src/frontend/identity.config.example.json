@@ -1,0 +1,10 @@
+{
+  "authority": "https://REPLACE_WITH_ZITADEL_ISSUER",
+  "clientId": "REPLACE_WITH_PUBLIC_SPA_CLIENT_ID",
+  "redirectUri": "http://localhost:4200/auth/callback",
+  "postLogoutRedirectUri": "http://localhost:4200/",
+  "responseType": "code",
+  "codeChallengeMethod": "S256",
+  "scope": "openid profile REPLACE_WITH_API_SCOPE_AND_AUDIENCE_SCOPE",
+  "tokenStorage": "memory"
+}

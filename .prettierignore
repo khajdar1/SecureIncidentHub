@@ -1,0 +1,13 @@
+AGENTS.md
+**/package-lock.json
+**/packages.lock.json
+**/bin/**
+**/obj/**
+**/dist/**
+**/out-tsc/**
+**/.angular/**
+**/node_modules/**
+.tools/**
+.cache/**
+artifacts/**
+infra/terraform/**/.terraform/**

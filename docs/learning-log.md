@@ -1,0 +1,11 @@
+# Learning log
+
+## Phase 0 — architecture and repository foundation
+
+- **Modular monolith:** shared application rules in one codebase, with API/worker hosts and explicit dependency direction. This avoids distributed-system overhead while preserving ownership. Microservices are the main alternative, justified only by demonstrated team/scaling needs. Architecture/build tests verify the current boundary.
+- **OIDC:** a provider authenticates and issues tokens; the API validates them. ZITADEL is external, and `(iss, sub)` identifies users. Hosted OIDC avoids custom password handling. Self-hosted identity is the operational alternative. Offline signed-token tests verify API validation; actual provider discovery/PKCE remains Phase 1.
+- **Tenant isolation:** application membership grants access, not an organization ID or provider role claim. Explicit scoped queries and constraints are the planned implementation; row-level security can add defense. Phase 0 verifies deny-by-default only; no tenant query exists to test yet.
+- **Infrastructure adapters:** application storage requirements use provider-neutral types. S3 is planned; the local adapter was deferred because MinIO is archived. Replacing it requires supported-candidate review. Dependency tests verify separation, not storage behavior.
+- **Trust boundaries:** browser, application hosts, private data, external identity and telemetry/operator systems transfer different authority. Loopback services and no live credentials limit Phase 0 exposure. The threat model distinguishes these facts from future controls.
+- **Reproducibility:** package locks, provider locks, pinned actions and credential-free checks make a checkout reviewable. A green build alone says nothing about deployed tenant isolation. Verification results are recorded in `security/reports/phase-0.md`.
+- **Failure paths and evidence:** 35 backend cases and one Angular test passed alongside builds, formatting, Terraform and repository scans. Testing HTML content negotiation caught a Development exception-page exposure and led to a safe JSON fallback. Compose syntax passed, but its runtime health is unknown because the Docker engine is unavailable. Tests, static validation and deployed behavior prove different things; [the verification report](../security/reports/phase-0.md) preserves those distinctions.

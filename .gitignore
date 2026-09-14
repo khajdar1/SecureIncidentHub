@@ -1,0 +1,39 @@
+# Developer configuration and secrets
+.env
+.env.*
+!.env.example
+**/appsettings.Local.json
+*.local.json
+*.tfvars
+*.tfvars.json
+*.pem
+*.key
+*.pfx
+# Build and tool output
+**/bin/
+**/obj/
+node_modules/
+dist/
+out-tsc/
+.angular/
+coverage/
+TestResults/
+artifacts/
+.tools/
+.cache/
+.vs/
+.vscode/
+*.user
+*.suo
+# Terraform state and working files; commit provider lock files
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+.terraformrc
+terraform.rc
+# OS files
+.DS_Store
+Thumbs.db
