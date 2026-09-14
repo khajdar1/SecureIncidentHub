@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/backend/">
+    <Project Path="src/backend/SecureIncidentHub.Api/SecureIncidentHub.Api.csproj" />
+    <Project Path="src/backend/SecureIncidentHub.Application/SecureIncidentHub.Application.csproj" />
+    <Project Path="src/backend/SecureIncidentHub.Domain/SecureIncidentHub.Domain.csproj" />
+    <Project Path="src/backend/SecureIncidentHub.Infrastructure/SecureIncidentHub.Infrastructure.csproj" />
+    <Project Path="src/backend/SecureIncidentHub.Worker/SecureIncidentHub.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SecureIncidentHub.IntegrationTests/SecureIncidentHub.IntegrationTests.csproj" />
+    <Project Path="tests/SecureIncidentHub.UnitTests/SecureIncidentHub.UnitTests.csproj" />
+  </Folder>
+</Solution>

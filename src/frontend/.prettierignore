@@ -1,0 +1,7 @@
+node_modules/
+.angular/
+dist/
+out-tsc/
+coverage/
+.vscode/
+package-lock.json

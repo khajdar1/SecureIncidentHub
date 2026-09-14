@@ -1,0 +1,21 @@
+severity:
+  - HIGH
+  - CRITICAL
+exit-code: 1
+vulnerability:
+  ignore-unfixed: false
+pkg:
+  include-dev-deps: true
+scan:
+  disable-telemetry: true
+  skip-dirs:
+    - .git
+    - .cache
+    - .tools
+    - artifacts
+    - '**/node_modules'
+    - '**/bin'
+    - '**/obj'
+    - '**/dist'
+    - '**/.angular'
+    - '**/.terraform'

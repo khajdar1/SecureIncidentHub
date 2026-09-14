@@ -4,6 +4,7 @@ AGENTS.md
 **/bin/**
 **/obj/**
 **/dist/**
+**/out-tsc/**
 **/.angular/**
 **/node_modules/**
 .tools/**

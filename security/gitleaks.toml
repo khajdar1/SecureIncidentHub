@@ -1,0 +1,8 @@
+title = "Secure Incident Hub secret scanning"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Untracked tool caches and generated build artifacts; never source or reviewed reports"
+paths = ['''(^|[\\/])(\.git|\.cache|\.tools|node_modules|bin|obj|\.angular|dist|artifacts)([\\/]|$)''']

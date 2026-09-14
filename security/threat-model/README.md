@@ -4,6 +4,8 @@
 
 Scope: the Phase 0 repository foundation, reviewed 2026-09-14. This is an architecture threat model, not a completed vulnerability audit. An independent read-only architecture review was reconciled with source and local test results. Owner-supplied product requirements describe intended future behavior; source evidence below describes the implemented baseline.
 
+Implementation verification includes real signed-token rejection tests and a regression for unsupported `Accept` headers: the exception boundary falls back to a fixed JSON Problem Details response rather than allowing Development's exception page. Host lifecycle and dependency tests do not establish tenant isolation or external-service readiness.
+
 The Angular shell renders static text; API routes are anonymous liveness, host readiness and fixed Problem Details; the worker only handles lifecycle. PostgreSQL/RabbitMQ are optional Compose services with no application clients. Object storage, memberships, incidents, evidence, audit and notifications have no runtime implementation. See the [trust-boundary DFD](data-flow.md) and [C4 views](../../docs/architecture/README.md).
 
 | Component                                        | Inspected source evidence                                                |
