@@ -12,6 +12,7 @@ Phase 0 establishes Angular, ASP.NET Core API/worker hosts, tests, local Postgre
 - [Identity configuration](docs/architecture/identity.md), [threat model](security/threat-model/README.md)
 - [Version choices](docs/versions.md), [security testing](security/testing.md), [learning log](docs/learning-log.md)
 - [Runbooks](docs/runbooks/README.md), [security policy](SECURITY.md)
+- [Phase 0 verification results and limitations](security/reports/phase-0.md)
 
 ## Repository map
 
