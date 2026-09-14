@@ -752,3 +752,30 @@ A task is complete only when:
 * Remaining limitations are disclosed
 
 A passing build alone does not mean the task is complete.
+
+## AWS account constraints
+
+- The AWS account uses the restricted AWS Free plan.
+- Use `us-east-1` for every regional AWS resource.
+- Do not require or attempt to activate AWS advanced features.
+- Do not create an IAM OIDC identity provider.
+- Do not store long-lived AWS access keys in GitHub Secrets or repository files.
+- GitHub Actions must initially perform CI only: build, test, lint, dependency scanning,
+  SAST, Docker image validation, and Terraform validation.
+- AWS deployment is executed manually from the developer's local machine using
+  temporary credentials obtained through:
+
+  aws login --profile new-profile-name
+
+- Before any AWS operation, verify the identity with:
+
+  aws sts get-caller-identity --profile new-profile-name
+
+- Terraform and deployment scripts must use the `new-profile-name` AWS profile
+  and the `us-east-1` region.
+- Provide PowerShell-compatible deployment scripts for Windows.
+- Infrastructure code may be created before deployment, but never assume that
+  an AWS service is available. Perform a preflight check and fail clearly when
+  the restricted account blocks a required operation.
+- Never silently replace ECS Fargate with EC2 or another architecture merely
+  because an AWS feature is unavailable.
