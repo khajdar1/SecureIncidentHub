@@ -24,7 +24,7 @@
     "@angular/cli": "21.2.24",
     "@angular/compiler-cli": "21.2.23",
     "jsdom": "28.1.0",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "typescript": "5.9.3",
     "vitest": "4.1.11"
   },
